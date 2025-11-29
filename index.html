@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRADA — Барбершоп</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600') center/cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #d4af37;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: #d4af37;
+            color: #000;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.9);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            color: #d4af37;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 10%;
+        }
+
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card .price {
+            color: #d4af37;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* MASTERS */
+        .masters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .master-card {
+            text-align: center;
+        }
+
+        .master-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: 0.3s;
+        }
+
+        .master-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        .master-card h3 {
+            font-family: 'Oswald', sans-serif;
+            margin-top: 15px;
+            font-size: 1.3rem;
+        }
+
+        .master-card p {
+            color: #d4af37;
+        }
+
+        /* GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* CONTACT */
+        #contact {
+            background: #111;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Oswald', sans-serif;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #d4af37;
+            outline: none;
+        }
+
+        form button {
+            width: 100%;
+            padding: 15px;
+            background: #d4af37;
+            color: #000;
+            border: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: #fff;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 30px;
+            color: #666;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a href="#" class="nav-logo">BRADA</a>
+        <ul>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#masters">Мастера</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">BRADA</div>
+        <p>Мужской стиль — это искусство</p>
+        <a href="#contact" class="btn">ЗАПИСАТЬСЯ</a>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <h2>НАШИ УСЛУГИ</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Мужская стрижка</h3>
+                <p>Классика или современный стиль</p>
+                <p class="price">1 500 ₽</p>
+            </div>
+            <div class="service-card">
+                <h3>Стрижка бороды</h3>
+                <p>Моделирование и уход</p>
+                <p class="price">800 ₽</p>
+            </div>
+            <div class="service-card">
+                <h3>Королевское бритьё</h3>
+                <p>Горячие полотенца и опасная бритва</p>
+                <p class="price">1 200 ₽</p>
+            </div>
+            <div class="service-card">
+                <h3>Комплекс</h3>
+                <p>Стрижка + борода + укладка</p>
+                <p class="price">2 500 ₽</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MASTERS -->
+    <section id="masters">
+        <h2>НАШИ МАСТЕРА</h2>
+        <div class="masters-grid">
+            <div class="master-card">
+                <img src="https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=400" alt="Мастер">
+                <h3>Александр</h3>
+                <p>Топ-барбер</p>
+            </div>
+            <div class="master-card">
+                <img src="https://images.unsplash.com/photo-1493106819501-66d381c466f1?w=400" alt="Мастер">
+                <h3>Дмитрий</h3>
+                <p>Стилист</p>
+            </div>
+            <div class="master-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Мастер">
+                <h3>Максим</h3>
+                <p>Beard-мастер</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <h2>НАШИ РАБОТЫ</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600" alt="Работа">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600" alt="Работа">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600" alt="Работа">
+            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600" alt="Работа">
+            <img src="https://images.unsplash.com/photo-1582771824186-f7e489f85983?w=600" alt="Работа">
+            <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?w=600" alt="Работа">
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>ЗАПИСАТЬСЯ</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Контакты</h3>
+                <p>📍 Москва, ул. генерала кузнецова, 15</p>
+                <p>📞 +7 (985 768 43 12</p>
+                <p>⏰ Пн-Вс: 10:00 — 22:00</p>
+                <p>📧 info@brada.ru</p>
+            </div>
+            <form>
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <textarea rows="4" placeholder="Комментарий"></textarea>
+                <button type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2024 BRADA Barbershop. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>
