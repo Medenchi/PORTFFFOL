@@ -204,6 +204,7 @@
             display: flex;
             list-style: none;
             gap: 5px;
+            overflow-x: auto;
         }
 
         .main-nav a {
@@ -214,6 +215,7 @@
             color: var(--gray-700);
             border-bottom: 3px solid transparent;
             transition: 0.2s;
+            white-space: nowrap;
         }
 
         .main-nav a:hover {
@@ -273,6 +275,7 @@
             display: flex;
             gap: 40px;
             margin-bottom: 25px;
+            flex-wrap: wrap;
         }
 
         .banner-stat {
@@ -331,6 +334,7 @@
             max-width: 100%;
             max-height: 300px;
             object-fit: contain;
+            border-radius: 12px;
         }
 
         /* CONTAINER */
@@ -387,9 +391,10 @@
         }
 
         .category-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            object-fit: contain;
         }
 
         .category-card h3 {
@@ -401,7 +406,7 @@
         /* PRODUCTS GRID */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 20px;
         }
 
@@ -426,6 +431,7 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
+            z-index: 2;
         }
 
         .badge {
@@ -451,7 +457,7 @@
         }
 
         .product-image {
-            height: 180px;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -460,7 +466,7 @@
         }
 
         .product-image img {
-            max-height: 140px;
+            max-height: 160px;
             max-width: 100%;
             object-fit: contain;
             transition: 0.3s;
@@ -575,7 +581,7 @@
             padding: 30px;
             margin: 40px 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px;
             border: 1px solid var(--gray-200);
         }
@@ -757,6 +763,10 @@
                 margin-top: 15px;
             }
 
+            .header-actions {
+                gap: 15px;
+            }
+
             .main-nav ul {
                 overflow-x: auto;
             }
@@ -769,14 +779,13 @@
                 font-size: 1.6rem;
             }
 
-            .banner-stats {
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
+            }
+
+            .product-image {
+                height: 150px;
             }
 
             .product-info {
@@ -863,7 +872,6 @@
             <li><a href="#">Периферия</a></li>
             <li><a href="#">Мониторы</a></li>
             <li><a href="#">Оргтехника</a></li>
-            <li><a href="#">Сетевое оборудование</a></li>
             <li><a href="#">Акции</a></li>
         </ul>
     </nav>
@@ -894,7 +902,7 @@
                 <a href="#" class="btn btn-outline">Собрать ПК</a>
             </div>
             <div class="banner-image">
-                <img src="https://cdn.dns-shop.ru/thumb/st4/fit/500/500/cc0b3e3e9f5b8d3e4f6d8e8c1d0c3b2a/q93_fbfed2b3b4c6c7b0a1d2e3f4.jpg" alt="Компьютер">
+                <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=500&q=80" alt="Игровой компьютер">
             </div>
         </div>
     </section>
@@ -910,35 +918,35 @@
 
         <div class="categories-grid">
             <a href="#" class="category-card">
-                <span class="category-icon">🖥️</span>
+                <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=100&q=80" alt="Компьютеры" class="category-icon">
                 <h3>Компьютеры</h3>
             </a>
             <a href="#" class="category-card">
-                <span class="category-icon">💻</span>
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=100&q=80" alt="Ноутбуки" class="category-icon">
                 <h3>Ноутбуки</h3>
             </a>
             <a href="#" class="category-card">
-                <span class="category-icon">🎮</span>
+                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=100&q=80" alt="Видеокарты" class="category-icon">
                 <h3>Видеокарты</h3>
             </a>
             <a href="#" class="category-card">
-                <span class="category-icon">⚡</span>
+                <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=100&q=80" alt="Процессоры" class="category-icon">
                 <h3>Процессоры</h3>
             </a>
             <a href="#" class="category-card">
-                <span class="category-icon">📀</span>
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=100&q=80" alt="Мат. платы" class="category-icon">
                 <h3>Мат. платы</h3>
             </a>
             <a href="#" class="category-card">
-                <span class="category-icon">💾</span>
+                <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=100&q=80" alt="SSD" class="category-icon">
                 <h3>SSD / HDD</h3>
             </a>
             <a href="#" class="category-card">
-                <span class="category-icon">🧠</span>
+                <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?w=100&q=80" alt="Память" class="category-icon">
                 <h3>Память</h3>
             </a>
             <a href="#" class="category-card">
-                <span class="category-icon">📺</span>
+                <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=100&q=80" alt="Мониторы" class="category-icon">
                 <h3>Мониторы</h3>
             </a>
         </div>
@@ -950,13 +958,13 @@
         </div>
 
         <div class="products-grid">
-            <!-- Product 1 -->
+            <!-- Product 1: Видеокарта -->
             <div class="product-card">
                 <div class="product-badges">
                     <span class="badge badge-hit">Хит</span>
                 </div>
                 <div class="product-image">
-                    <img src="https://c.dns-shop.ru/thumb/st1/fit/300/300/c1f9c0a5e8a6d5b4f7e3d2c1a0b9e8d7/q93_9e9f9a9b9c9d9e9f.jpg" alt="Видеокарта">
+                    <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&q=80" alt="Видеокарта RTX 4070">
                 </div>
                 <div class="product-info">
                     <div class="product-category">Видеокарты</div>
@@ -975,13 +983,13 @@
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            <!-- Product 2: Процессор -->
             <div class="product-card">
                 <div class="product-badges">
                     <span class="badge badge-sale">-15%</span>
                 </div>
                 <div class="product-image">
-                    <img src="https://c.dns-shop.ru/thumb/st4/fit/300/300/a2b3c4d5e6f7g8h9/q93_processor.jpg" alt="Процессор">
+                    <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=400&q=80" alt="Процессор AMD Ryzen">
                 </div>
                 <div class="product-info">
                     <div class="product-category">Процессоры</div>
@@ -1001,13 +1009,13 @@
                 </div>
             </div>
 
-            <!-- Product 3 -->
+            <!-- Product 3: Материнская плата -->
             <div class="product-card">
                 <div class="product-badges">
                     <span class="badge badge-new">Новинка</span>
                 </div>
                 <div class="product-image">
-                    <img src="https://c.dns-shop.ru/thumb/st1/fit/300/300/b3c4d5e6f7g8h9i0/q93_motherboard.jpg" alt="Материнская плата">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80" alt="Материнская плата">
                 </div>
                 <div class="product-info">
                     <div class="product-category">Материнские платы</div>
@@ -1026,13 +1034,13 @@
                 </div>
             </div>
 
-            <!-- Product 4 -->
+            <!-- Product 4: SSD -->
             <div class="product-card">
                 <div class="product-badges">
                     <span class="badge badge-hit">Хит</span>
                 </div>
                 <div class="product-image">
-                    <img src="https://c.dns-shop.ru/thumb/st4/fit/300/300/c4d5e6f7g8h9i0j1/q93_ssd.jpg" alt="SSD">
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&q=80" alt="SSD Samsung">
                 </div>
                 <div class="product-info">
                     <div class="product-category">SSD накопители</div>
@@ -1051,10 +1059,10 @@
                 </div>
             </div>
 
-            <!-- Product 5 -->
+            <!-- Product 5: Оперативная память -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://c.dns-shop.ru/thumb/st1/fit/300/300/d5e6f7g8h9i0j1k2/q93_ram.jpg" alt="Оперативная память">
+                    <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&q=80" alt="Оперативная память">
                 </div>
                 <div class="product-info">
                     <div class="product-category">Оперативная память</div>
@@ -1073,13 +1081,13 @@
                 </div>
             </div>
 
-            <!-- Product 6 -->
+            <!-- Product 6: Монитор -->
             <div class="product-card">
                 <div class="product-badges">
                     <span class="badge badge-sale">-20%</span>
                 </div>
                 <div class="product-image">
-                    <img src="https://c.dns-shop.ru/thumb/st4/fit/300/300/e6f7g8h9i0j1k2l3/q93_monitor.jpg" alt="Монитор">
+                    <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80" alt="Монитор ASUS">
                 </div>
                 <div class="product-info">
                     <div class="product-category">Мониторы</div>
@@ -1091,6 +1099,56 @@
                     <div class="product-price">
                         <span class="price-current">27 990 ₽</span>
                         <span class="price-old">34 990 ₽</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-cart">В корзину</button>
+                        <button class="btn-favorite">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7: Ноутбук -->
+            <div class="product-card">
+                <div class="product-badges">
+                    <span class="badge badge-new">Новинка</span>
+                </div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=80" alt="Ноутбук">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Ноутбуки</div>
+                    <a href="#" class="product-title">Ноутбук ASUS ROG Strix G16 i7-13650HX RTX 4060</a>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.8 (67)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-current">134 990 ₽</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-cart">В корзину</button>
+                        <button class="btn-favorite">♡</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8: Игровой ПК -->
+            <div class="product-card">
+                <div class="product-badges">
+                    <span class="badge badge-hit">ТОП</span>
+                </div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&q=80" alt="Игровой компьютер НИКС">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Компьютеры НИКС</div>
+                    <a href="#" class="product-title">Игровой компьютер НИКС X7 PRO i7-14700K RTX 4080</a>
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span>5.0 (34)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price-current">289 990 ₽</span>
                     </div>
                     <div class="product-actions">
                         <button class="btn-cart">В корзину</button>
